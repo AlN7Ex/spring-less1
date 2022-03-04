@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sumProc" class="mysak.spring.part1.processors.SumProcessor"/>
+    <bean id="subtractProc" class="mysak.spring.part1.processors.SubtractProcessor"/>
+    <bean id="divideProc" class="mysak.spring.part1.processors.DivideProcessor"/>
+    <bean id="multiplyProc" class="mysak.spring.part1.processors.MultiplyProcessor"/>
+
+    <bean id="calculator" class="mysak.spring.part1.Calculator">
+        <constructor-arg ref="sumProc"/>
+        <constructor-arg ref="subtractProc"/>
+        <constructor-arg ref="divideProc"/>
+        <constructor-arg ref="multiplyProc"/>
+    </bean>
+</beans>
